@@ -1,4 +1,6 @@
---- Log de Chat para Alice (2025-06-04 18:43:59) ---
-[2025-06-04 18:44:09] [Sistema]: Chave pública enviada para Bob. -> Dados Processados: {'e': 19, 'n': 3233}
-[2025-06-04 18:44:10] [Sistema]: Comunicação estabelecida com Bob.
-[2025-06-04 18:44:10] [Sistema]: Chave pública de Bob recebida. -> Dados Processados: {'e': 859, 'n': 4757}
+--- Log de Chat para Alice (2025-06-04 18:51:10) ---
+[2025-06-04 18:51:19] [Sistema]: Chave pública enviada para Bob. -> Dados Processados: {'e': 19, 'n': 3233}
+[2025-06-04 18:51:20] [Sistema]: Chave pública de Bob recebida. -> Dados Processados: {'e': 859, 'n': 4757}
+[2025-06-04 18:51:20] [Sistema]: Comunicação estabelecida com Bob.
+[2025-06-04 18:51:26] Recebida de Bob: ola alice -> Dados Processados: [194, 2609, 1971, 3018, 1971, 2609, 2755, 2798, 2827]
+[2025-06-04 18:51:34] Enviada para Bob: ola bob -> Dados Processados: [2992, 1381, 3715, 3382, 4051, 2992, 4051]

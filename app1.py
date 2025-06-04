@@ -3,27 +3,30 @@ import requests
 import threading
 import time
 from datetime import datetime
-import json 
+import json
 import sys 
-import os  
+import os 
+
+# Adiciona o diretório pai (rsa) ao sys.path para encontrar rsa_lib
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from rsa_lib import generate_keypair, encrypt, decrypt 
+from rsa_lib import generate_keypair, encrypt, decrypt # Importa da sua lib
 
 app = Flask(__name__)
 
-MY_PORT = 5000
-PEER_PORT = 5001
+# --- Configurações ---
+MY_PORT = 5001
+PEER_PORT = 5000
 PEER_URL = f'http://localhost:{PEER_PORT}'
-USERNAME = "Alice"
-PEER_USERNAME = "Bob"
+USERNAME = "Bob"
+PEER_USERNAME = "Alice"
 LOG_FILE = f"{USERNAME.lower()}_chat.log"
 
-# Primos para a chave de Alice (devem ser diferentes dos de Bob para chaves distintas)
-P_ALICE = 61
-Q_ALICE = 53
+# Primos para a chave de Bob (devem ser diferentes dos de Alice para chaves distintas)
+P_BOB = 67 
+Q_BOB = 71
 
 # Gera par de chaves usando sua rsa_lib
-public_key, private_key = generate_keypair(P_ALICE, Q_ALICE)
+public_key, private_key = generate_keypair(P_BOB, Q_BOB)
 # public_key é (e, n), private_key é (d, n)
 
 # Armazena chave pública do outro (agora como tupla (e,n))
