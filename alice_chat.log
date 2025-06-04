@@ -1,0 +1,8 @@
+--- Log de Chat para Alice (2025-06-04 01:14:21) ---
+[2025-06-04 01:14:42] [Sistema]: Chave pública de Bob recebida. -> Dados Processados: {'e': 859, 'n': 4757}
+[2025-06-04 01:14:45] [Sistema]: Chave pública enviada para Bob. -> Dados Processados: {'e': 19, 'n': 3233}
+[2025-06-04 01:14:45] [Sistema]: Comunicação estabelecida com Bob.
+[2025-06-04 01:14:50] Enviada para Bob: ola -> Dados Processados: [2992, 1381, 3715]
+[2025-06-04 01:14:58] Recebida de Bob: sda -> Dados Processados: [1527, 228, 1971]
+[2025-06-04 01:15:16] Recebida de Bob: ola eu sou o bob -> Dados Processados: [194, 2609, 1971, 3018, 2827, 2455, 3018, 1527, 194, 2455, 3018, 194, 3018, 1558, 194, 1558]
+[2025-06-04 01:15:33] Enviada para Bob: sim isso é tipo um whatisapp durrrr -> Dados Processados: [919, 3589, 1449, 3382, 3589, 919, 919, 2992, 3382, 2444, 3382, 1255, 3589, 3797, 2992, 3382, 1792, 1449, 3382, 588, 3521, 3715, 1255, 3589, 919, 3715, 3797, 3797, 3382, 4053, 1792, 2392, 2392, 2392, 2392]
