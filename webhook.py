@@ -5,7 +5,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 from flask import Flask, request, jsonify
-from ..rsa.rsa_lib import generate_keypair, encrypt, decrypt
+from rsa_lib import generate_keypair, encrypt, decrypt
 
 app = Flask(__name__)
 

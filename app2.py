@@ -75,6 +75,14 @@ def receive_msg_route(): # Renomeado
         log_message(f"Erro ao descriptografar de {PEER_USERNAME}", f"Dados brutos: {str(request.json if request.is_json else request.data)}", f"Erro: {e}")
         return jsonify({"error": "Erro ao processar mensagem"}), 400
 
+@app.route('/webhook', methods=['POST'])
+def external_webhook():
+    data = request.json
+    mensagem = data.get("mensagem", "")
+    print(f"[Webhook] Mensagem recebida de sistema externo: {mensagem}")
+    log_message("[Webhook]", mensagem)
+    return jsonify({"status": "recebido"}), 200
+
 def send_key_to_peer():
     max_retries = 5
     retry_delay = 3

@@ -6,14 +6,11 @@ from datetime import datetime
 import json 
 import sys 
 import os  
-
-# Adiciona o diretório pai (rsa) ao sys.path para encontrar rsa_lib
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from rsa_lib import generate_keypair, encrypt, decrypt # Importa da sua lib
+from rsa_lib import generate_keypair, encrypt, decrypt 
 
 app = Flask(__name__)
 
-# --- Configurações ---
 MY_PORT = 5000
 PEER_PORT = 5001
 PEER_URL = f'http://localhost:{PEER_PORT}'
@@ -74,6 +71,14 @@ def receive_msg_route(): # Renomeado
         print(f"\n[Sistema] {error_msg}")
         log_message(f"Erro ao descriptografar de {PEER_USERNAME}", f"Dados brutos: {str(request.json if request.is_json else request.data)}", f"Erro: {e}")
         return jsonify({"error": "Erro ao processar mensagem"}), 400
+
+@app.route('/webhook', methods=['POST'])
+def external_webhook():
+    data = request.json
+    mensagem = data.get("mensagem", "")
+    print(f"[Webhook] Mensagem recebida de sistema externo: {mensagem}")
+    log_message("[Webhook]", mensagem)
+    return jsonify({"status": "recebido"}), 200
 
 def send_key_to_peer():
     max_retries = 5
